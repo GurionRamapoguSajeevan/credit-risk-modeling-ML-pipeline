@@ -1,5 +1,5 @@
 # credit-risk-modeling-ML-pipeline
-An end-to-end credit risk scoring system designed to simulate real-world borrower default prediction in consumer lending environments.
+An end-to-end **credit risk scoring system** designed to simulate real-world **borrower default prediction in consumer lending environments**.
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://grs-credit-risk-modeling-ml-pipeline-cns3z2uh5bpbijwpcwespo.streamlit.app/) <!-- Replace with your actual deployed URL if available -->
 
@@ -36,23 +36,74 @@ In lending (consumer/small business), defaults cost billions annually (e.g., 22%
 | **ML**           | Scikit-learn, XGBoost, SHAP, imbalanced-learn |
 | **Viz**          | Plotly, Seaborn, Streamlit    |
 | **DevOps**       | Git/GitHub, Unix/Linux (Colab), Reproducible notebooks |
-| **Big Data**     | AWS-inspired (S3 sim), Databricks-style scaling |
+| **Big Data**     | Streamlit (public hosting) |
 
 **All FREE tools—no paid compute.**
 
 ## Pipeline Overview
-1. **Data Ingestion & Quality** → Merge, clean, validate.
-2. **EDA & Feature Engineering** → Stats, correlations, new features (e.g., DTI ratio).
-3. **Modeling** → Train/test split, baselines → XGBoost (tuned).
-4. **Evaluation & Explainability** → AUC, PR curves, SHAP for business insights.
-5. **Deployment** → Interactive Streamlit app (live demo).
+1. **Data Ingestion & Quality** → Load CSV, check missings/duplicates/outliers, impute (median), cap extremes.
+2. **EDA & Feature Engineering** → Distributions/correlations, new features (DTI ratio, loan-to-income, emp-to-age stability).
+3. **Preprocessing** → Train/test split (stratified), scaling (StandardScaler), imbalance handling (SMOTE).
+4. **Modeling** → 
+   - Logistic Regression (interpretable baseline).
+   - Random Forest (robust ensemble).
+   - XGBoost (gradient boosting — production-grade for risk data).
+5. **Evaluation** → Risk-focused metrics (AUC-ROC, PR-AUC, confusion matrix), curves (ROC/PR).
+6. **Explainability** → SHAP (global summary + local waterfalls).
+7. **Deployment** → Interactive Streamlit app (inputs → prediction + SHAP "why").
 6. **Impact** → "What-if" scenarios for lending teams.
 
 ## Quick Start
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/credit-risk-modeling-ML-pipeline.git
+git clone https://github.com/GurionRamapoguSajeevan/credit-risk-modeling-ML-pipeline.git
 cd credit-risk-modeling-ML-pipeline
 
-# Install (in Colab or venv)
+# Install dependencies
 pip install -r requirements.txt
+
+# Run notebook locally (or open in Colab)
+jupyter notebook Credit_risk_main_code.ipynb
+
+# For Streamlit app (local)
+streamlit run app.py
+```
+
+## 📈 Results
+
+- **Best Model**: XGBoost → 0.9343 AUC-ROC | 0.8811 PR-AUC | 92% Accuracy.
+- **Key Insight**: High DTI + renter status + D grade → 3x default risk.
+- **Business Value**: Like LexisNexis RiskView™ — actionable for cross-functional teams (sales, compliance, ops). Reduces false positives by ~25% vs. baseline.
+
+**Top Features (SHAP Impact):**
+* person_home_ownership_RENT
+* loan_int_rate
+* person_income
+* dti_ratio
+* loan_grade_D
+
+**SHAP Summary Plot**:
+  <img width="789" height="940" alt="shap_dot(summary)_plot" src="https://github.com/user-attachments/assets/201a94f3-51ed-4db0-911e-d3056170e98a" />
+
+**SHAP Bar Plot**:
+  <img width="790" height="620" alt="shap_bar_plot" src="https://github.com/user-attachments/assets/fb6f7af7-15d1-4ab7-aa94-3d7d54fd7c38" />
+
+
+**XGBoost ROC Curve**:
+- (AUC 0.9343 — strong discrimination)
+
+<img width="820" height="678" alt="image" src="https://github.com/user-attachments/assets/eb25f1f3-78d3-4bdb-91f6-ecc4f2b72fb0" />
+
+## Project Structure: 
+```
+credit-risk-modeling-ML-pipeline/
+├── Credit_risk_main_code.ipynb    # Full end-to-end notebook (EDA → models → SHAP)
+├── app.py                         # Streamlit dashboard code
+├── xgboost_credit_risk_model.pkl  # Saved XGBoost model
+├── scaler.pkl                     # Saved scaler
+├── shap_explainer.pkl             # Saved SHAP explainer
+├── credit_risk_cleaned.csv        # Processed dataset (optional)
+├── requirements.txt               # Dependencies
+├── README.md
+└── .gitignore
+```
