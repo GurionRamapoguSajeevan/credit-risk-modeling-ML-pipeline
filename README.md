@@ -1,6 +1,8 @@
 # credit-risk-modeling-ML-pipeline
 An end-to-end credit risk scoring system designed to simulate real-world borrower default prediction in consumer lending environments.
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://grs-credit-risk-modeling-ml-pipeline-cns3z2uh5bpbijwpcwespo.streamlit.app/) <!-- Replace with your actual deployed URL if available -->
+
 # Credit Risk Modeling ML Pipeline
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
