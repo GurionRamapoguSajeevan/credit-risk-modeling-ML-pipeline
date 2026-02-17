@@ -1,20 +1,19 @@
 # credit-risk-modeling-ML-pipeline
-An end-to-end **credit risk scoring system** designed to simulate real-world **borrower default prediction in consumer lending environments**.
+An end-to-end **credit risk scoring prediction system** designed to simulate real-world **borrower default prediction in consumer lending environments**.
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://grs-credit-risk-modeling-ml-pipeline-cns3z2uh5bpbijwpcwespo.streamlit.app/) <!-- Replace with your actual deployed URL if available -->
 
 # Credit Risk Modeling ML Pipeline
+An end-to-end **credit risk scoring prediction system** designed to simulate real-world **borrower default prediction in consumer lending environments**.
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 [![XGBoost](https://img.shields.io/badge/XGBoost-2.0+-orange.svg)](https://xgboost.readthedocs.io/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.30+-FF4B4B.svg)](https://streamlit.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**End-to-end machine learning pipeline for predicting credit default risk in consumer lending.** 
-
 This project demonstrates **production-grade data science** skills: assembling multi-source data, proactive quality checks, advanced modeling (with imbalance handling), explainable AI, and stakeholder-friendly dashboards. 
 
-**Directly aligned with Data Scientist II roles at LexisNexis Risk Solutions**—mirrors their credit risk, fraud mitigation, and predictive analytics for lending, telecom, retail, and e-commerce.
+**Directly aligned with Data Scientist work at LexisNexis Risk Solutions**—mirrors their credit risk, fraud mitigation, and predictive analytics for lending, telecom, retail, and e-commerce.
 
 ## Problem Statement
 In lending (consumer/small business), defaults cost billions annually (e.g., 22% rise in fraud/credit losses per industry reports). This pipeline builds a **risk scorer** to:
@@ -107,3 +106,16 @@ credit-risk-modeling-ML-pipeline/
 ├── README.md
 └── .gitignore
 ```
+
+## Contributing to the project:
+Contributions welcome! Fork the repo, create a branch, and submit a pull request. Focus on bug fixes, feature additions, or documentation improvements.
+
+## License
+**MIT** License. See [LICENSE](LICENSE) for details.
+
+## Contact
+- [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/GurionRamapoguSajeevan)
+- [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rs-gurion/)
+- [![Email](https://img.shields.io/badge/email-%23D14836.svg?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gurion7007@gmail.com)
+
+**Built as a personal project** to brush up on and dive deep in Machine Learning for Credit Risk / fraud prediction; interview preparation purpose. Any feedback will be appreciated!
