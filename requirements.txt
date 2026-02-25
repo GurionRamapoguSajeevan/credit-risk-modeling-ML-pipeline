@@ -9,3 +9,5 @@ seaborn
 matplotlib
 streamlit
 duckdb
+streamlit>=1.52.0
+altair>=5.0 
